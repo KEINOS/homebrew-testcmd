@@ -1,7 +1,7 @@
 REPOSITORY_URL="https://github.com/KEINOS/testcmd".freeze
-HOMEBREW_TESTCMD_VERSION="0.0.1-20180216-1821".freeze
+HOMEBREW_TESTCMD_VERSION="v0.0.1-20180216-1821".freeze
 
-class TestCmd < Formula
+class Testcmd < Formula
   desc "Just echoes the hello world."
   homepage REPOSITORY_URL
   url "#{REPOSITORY_URL}/archive/#{HOMEBREW_TESTCMD_VERSION}.tar.gz"
