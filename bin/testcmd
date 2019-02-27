@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Version 0.0.1-20180216-1821
+# salt: 1316
 
 echo 'Hello World!'
 
