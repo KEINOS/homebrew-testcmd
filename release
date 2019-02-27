@@ -15,12 +15,10 @@ fi
 echo 'OK'
 
 # Moving to bin
-mv src/testcmd.sh bin/testcmd
+cp src/testcmd.sh bin/testcmd
 
 # Archive
 tar -zcvf $PATH_FILE_ARCH bin
 
 # CheckSUM
-shasum -a 256 $PATH_FILE_ARCH
-php -r "echo hash_file('sha256', '${PATH_FILE_ARCH}'), PHP_EOL;"
 shasum -a 256 $PATH_FILE_ARCH | awk '{ print $1 }'
