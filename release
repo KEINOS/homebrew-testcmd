@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+VER="v0.0.1-20180227-1022"
+NAME_ARCH='archive.tar.gz'
+
+rm -rf $NAME_ARCH
+
+# Testing
+echo -n '- Suppose testing here ... '
+if [ $? -ne 0 ]; then
+    echo 'NG'
+    echo 'You need to pass the test first.'
+fi
+echo 'OK'
+
+# Moving to bin
+mv src/testcmd.sh bin/testcmd
+
+# Archive
+tar -zcvf $NAME_ARCH bin
+
+# CheckSUM
+shasum -a 256 $NAME_ARCH
+php -r "echo hash_file('sha256', '${NAME_ARCH}'), PHP_EOL;"
+shasum -a 256 $NAME_ARCH | awk '{ print $1 }'
