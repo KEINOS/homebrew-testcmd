@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-VER="v0.0.1-20180227-1022"
-NAME_ARCH='archive.tar.gz'
+NAME_FILE_ARCH='archive.tar.gz'
+PATH_FILE_ARCH="docs/${NAME_FILE_ARCH}"
 
+# Remove old archive
 rm -rf $NAME_ARCH
 
 # Testing
@@ -17,9 +18,9 @@ echo 'OK'
 mv src/testcmd.sh bin/testcmd
 
 # Archive
-tar -zcvf $NAME_ARCH bin
+tar -zcvf $PATH_FILE_ARCH bin
 
 # CheckSUM
-shasum -a 256 $NAME_ARCH
-php -r "echo hash_file('sha256', '${NAME_ARCH}'), PHP_EOL;"
-shasum -a 256 $NAME_ARCH | awk '{ print $1 }'
+shasum -a 256 $PATH_FILE_ARCH
+php -r "echo hash_file('sha256', '${PATH_FILE_ARCH}'), PHP_EOL;"
+shasum -a 256 $PATH_FILE_ARCH | awk '{ print $1 }'

@@ -1,11 +1,11 @@
 REPOSITORY_URL="https://github.com/KEINOS/homebrew-testcmd".freeze
-HOMEBREW_TESTCMD_VERSION="v0.0.1-20180227-1022".freeze
+HOMEBREW_TESTCMD_VERSION="v0.0.1-20180227-1048".freeze
 
 class Testcmd < Formula
   desc "Just echoes the hello world."
   homepage REPOSITORY_URL
-  url "#{REPOSITORY_URL}/archive.tar.gz"
-  sha256 "0c4b01de7482f5f4cd1a338050bd201384343ffdf65d876f10783acfe53f262d"
+  url "https://KEINOS.github.io/homebrew-testcmd/archive.tar.gz"
+  sha256 "399f92c7756e4923411e0b3e3d2cca60daa773993e5e8aad034df4d0186b836b"
   head "#{REPOSITORY_URL}.git", :tag => HOMEBREW_TESTCMD_VERSION
 
   def install
